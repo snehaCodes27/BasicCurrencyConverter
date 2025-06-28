@@ -1,0 +1,87 @@
+<html>
+	<head>
+		<title>Currency Converter App By Sneha</title>
+		<style>
+			* {
+	box-sizing: border-box;
+	font-family: 'Segoe UI', sans-serif;
+	text-align: center;
+}
+
+body {
+	background: #fff9c4;
+	margin: 0;
+	padding: 20px;
+}
+
+h1 {
+	color: #2e3a59;
+	font-size: 38px;
+	margin-top: 20px;
+	margin-bottom: 30px;
+	font-weight: bold;
+	font-family: 'Segoe UI', sans-serif;
+	border-bottom: 3px solid #ffc107;
+	display: inline-block;
+	padding-bottom: 10px;
+}
+
+form {
+	margin-top: 40px;
+}
+
+label {
+	display: block;
+	font-size: 22px;
+	margin-bottom: 10px;
+	color: #444;
+}
+
+input {
+	font-size: 20px;
+	padding: 10px;
+	width: 250px;
+	border: 2px solid #888;
+	border-radius: 10px;
+	margin-bottom: 30px;
+}
+
+h2 {
+	font-family: "Brush Script MT", cursive;
+	color: #555;
+	font-size: 30px;
+	margin-top: 30px;
+}
+
+		</style>
+	</head>
+	<body>
+		<h1> Currency Converter Message App</h1>
+		<form >
+			<label> Amount in $</label>
+			<input type="number" step = 0.01 id="dollar"/> <br/><br/>
+			<label> Amount in ₹ </label>
+			<input type="number" step = 0.01 id="rupee"/>
+		</form>
+		<h2 id="msg"/>
+	<script>
+		let dollar = document.getElementById("dollar");
+		let rupee = document.getElementById("rupee");
+			dollar.addEventListener("input",function(){
+			let d= parseFloat(dollar.value);
+			let r= d*85;
+			rupee.value=r.toFixed(2)
+
+			});
+			rupee.addEventListener("input",function(){
+			let r= parseFloat(rupee.value);
+			let d= r/85;
+			dollar.value=d.toFixed(2)
+
+			});
+
+	</script>
+	</body>
+
+
+</html>
